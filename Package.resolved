@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FcaKit",
+        "repositoryURL": "https://github.com/rvyjidacek/FcaKit.git",
+        "state": {
+          "branch": null,
+          "revision": "52dcef898da9c292bce5ed0ce2a21e2ffe543e0c",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
