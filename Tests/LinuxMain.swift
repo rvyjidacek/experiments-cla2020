@@ -1,7 +1,7 @@
 import XCTest
 
-import bmf_experimentsTests
+import experiments_cla2020Tests
 
 var tests = [XCTestCaseEntry]()
-tests += bmf_experimentsTests.allTests()
+tests += experiments_cla2020Tests.allTests()
 XCTMain(tests)
