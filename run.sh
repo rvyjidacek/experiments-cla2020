@@ -3,7 +3,7 @@
 mkdir -p results
 
 printf "%s\n" "Running time benchmark"
-#swift run -c release experiments-cla2020 -t "$1"  > "results/time-results.tex"
+swift run -c release experiments-cla2020 -t "$1"  > "results/time-results.tex"
 
 
 printf "%s\n" "Compare coverage of GreCon and GreConD"
@@ -14,7 +14,7 @@ do
     filename=$(echo $filename | sed 's/.csv//')
     
     mkdir -p 'results/Grecon-vs-Grecond'
-    #swift run -c release experiments-cla2020 -c "$1/${file}" > "results/Grecon-vs-Grecond/${filename}-coverage.csv"
+    swift run -c release experiments-cla2020 -c "$1/${file}" > "results/Grecon-vs-Grecond/${filename}-coverage.csv"
 done
 
 mkdir -p "results/graphs/grecon-vs-grecond"
