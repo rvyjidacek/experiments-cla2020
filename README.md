@@ -14,7 +14,7 @@ Firstly you have to clone this repozitory to you computer:
 
 ```
 
-    git clone https://github.com/rvyjidacek/FcaKit.git
+    git clone https://github.com/rvyjidacek/experiments-cla2020.git
 
 ```
 
