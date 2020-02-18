@@ -22,7 +22,6 @@ public class TimeBenchmark: Benchmark {
                 let algs = [GreCon(), GreCon2(), GreConD()]
                 
                 for algorithm in algs {
-                    print(algorithm.name)
                     for _ in 0..<5 {
                         let timer = Timer()
                         let _ = algorithm.countFactors(in: context)
