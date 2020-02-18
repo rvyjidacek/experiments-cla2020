@@ -17,7 +17,7 @@ public class Benchmark {
                                              attributes: .concurrent,
                                              autoreleaseFrequency: .workItem,
                                              target: nil)
-    public let urls: [URL]
+    public var urls: [URL] = []
     
     init() throws {
         urls = try FileManager.default.contentsOfDirectory(at: URL(string: path)!,
