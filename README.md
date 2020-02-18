@@ -1,6 +1,6 @@
 # Experiments CLA 2020
 
-This repozitory contains implementation of each experiment which was used for paper Revisiting the GreCon Algorithm for Boolean Matrix Factorization. Implementation of GreCon2 algorithm can be found on [https://github.com/rvyjidacek/FcaKit/blob/master/Sources/FcaKit/BMF/GreCon2.swift](https://github.com/rvyjidacek/FcaKit/blob/master/Sources/FcaKit/BMF/GreCon2.swift])
+This repozitory contains implementation of each experiment which was used for paper Revisiting the GreCon Algorithm for Boolean Matrix Factorization. Implementation of GreCon2 algorithm can be found on [https://github.com/rvyjidacek/FcaKit/blob/master/Sources/FcaKit/BMF/GreCon2.swift](https://github.com/rvyjidacek/FcaKit/blob/master/Sources/FcaKit/BMF/GreCon2.swift)
 
 ## Requirements
 
