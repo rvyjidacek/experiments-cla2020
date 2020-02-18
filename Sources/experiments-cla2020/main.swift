@@ -6,6 +6,10 @@ if CommandLine.argc < 3 {
     print("Options:")
     print("  -t: Time bechnmark")
     print("  -c: Compare coverage GreCon vs GreConD")
+    print("  -g1: Computes coverage for GreCon and GreConD")
+    print("  -g2: Computes coverage for GreCon2 and GreConD")
+    print("  -p: Computes factorization for GreCon2 on A(I) and O(I)")
+    print("  -pg: Computes coverage of GreCon2 on O(I) and A(I) vs GreConD")
     exit(1)
 }
 
@@ -19,8 +23,22 @@ do {
     case "-c":
         CompareAlgorithmsCoverage().run()
         exit(0)
-    case "-g":
-        benchmark = try GraphVisualization()
+    case "-g1":
+        let benchmark = GraphVisualization()
+        benchmark.algorithms = [GreCon(), GreConD()]
+        benchmark.run()
+        exit(0)
+    case "-g2":
+        let benchmark = GraphVisualization()
+        benchmark.algorithms = [GreCon2(), GreConD()]
+        benchmark.run()
+        exit(0)
+    case "-p":
+        benchmark = try PartialFactorization()
+    case "-pg":
+        let benchmark = PartialGraphVisualization()
+        benchmark.run()
+        exit(0)
     default:
         print("Unknown option \(option)")
         exit(1)

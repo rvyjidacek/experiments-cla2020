@@ -36,7 +36,7 @@ public class TimeBenchmark: Benchmark {
                 for col in 0..<times.count {
                     let average = times[col].reduce(0, +) / Double(times[col].count)
                     let deviation = times[col].map({ (average - $0).magnitude }).reduce(0, +) / Double(times[col].count)
-                    print(" & $\(String(format: "%.3f", average.rounded(toPlaces: 2))) \\pm \(String(format: "%.3f", deviation.rounded(toPlaces: 2)))$ ", separator: "", terminator: "")
+                    print(" & $\(String(format: "%.2f", average.rounded(toPlaces: 2))) \\pm \(String(format: "%.2f", deviation.rounded(toPlaces: 2)))$ ", separator: "", terminator: "")
                 }
                 print("\\\\ \\hline")
                 
