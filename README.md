@@ -13,6 +13,16 @@ This repozitory contains implementation of each experiment which was used for pa
 Firstly you have to clone this repozitory to you computer:
 
 ```
+
     git clone https://github.com/rvyjidacek/FcaKit.git
 
 ```
+
+Then you have to launch bash script run.sh
+
+```
+
+    sh run.sh datasets
+    
+```
+This script executes time benchmark and creates coverage graphs which can be found in the paper mentioned earlier. You can find result in a folder results.
