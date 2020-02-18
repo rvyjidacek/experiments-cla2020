@@ -1,3 +1,2 @@
-# experiments-cla2020
+# Experiments CLA 2020
 
-A description of this package.
