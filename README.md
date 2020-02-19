@@ -1,6 +1,6 @@
 # Experiments CLA 2020
 
-This repozitory contains implementation of each experiment which was used for paper Revisiting the GreCon Algorithm for Boolean Matrix Factorization. Implementation of GreCon2 algorithm can be found on [https://github.com/rvyjidacek/FcaKit/blob/master/Sources/FcaKit/BMF/GreCon2.swift](https://github.com/rvyjidacek/FcaKit/blob/master/Sources/FcaKit/BMF/GreCon2.swift)
+The repository contains an implementation of all experiments that presented in paper Revisiting the GreCon Algorithm for Boolean Matrix Factorization submitted to CLA 2020. Implementation of the GreCon2 algorithm can be found on [https://github.com/rvyjidacek/FcaKit/blob/master/Sources/FcaKit/BMF/GreCon2.swift](https://github.com/rvyjidacek/FcaKit/blob/master/Sources/FcaKit/BMF/GreCon2.swift)
 
 ## Requirements
 
@@ -10,7 +10,7 @@ This repozitory contains implementation of each experiment which was used for pa
 
 ## Usage
 
-Firstly you have to clone this repozitory to you computer:
+First, you have to clone this repository to your computer:
 
 ```
 
@@ -18,11 +18,12 @@ Firstly you have to clone this repozitory to you computer:
 
 ```
 
-Then you have to launch bash script run.sh
+Then run the bash script run.sh
+
 
 ```
 
     sh run.sh datasets
     
 ```
-This script executes time benchmark and creates coverage graphs which can be found in the paper mentioned earlier. You can find result in a folder results.
+The script executes a time benchmark and plots the graphs that can be found in the paper. Already computed results can be found in directory results.
