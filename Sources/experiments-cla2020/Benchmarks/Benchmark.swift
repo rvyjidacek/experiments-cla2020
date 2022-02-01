@@ -22,7 +22,7 @@ public class Benchmark {
     init() throws {
         urls = try FileManager.default.contentsOfDirectory(at: URL(string: path)!,
                                                            includingPropertiesForKeys: nil,
-                                                           options: [.skipsHiddenFiles]).filter { $0.absoluteString.contains(".csv") }
+                                                           options: [.skipsHiddenFiles]).filter { $0.absoluteString.contains(".fimi") }
     }
     
     public func run() {

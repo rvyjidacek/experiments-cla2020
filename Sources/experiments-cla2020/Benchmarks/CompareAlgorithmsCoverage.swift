@@ -11,7 +11,7 @@ import FcaKit
 public class CompareAlgorithmsCoverage {
     
     public func run() {
-        let context = try! FormalContext(url: URL(fileURLWithPath: CommandLine.arguments[2]))
+        let context = try! FormalContext(url: URL(fileURLWithPath: CommandLine.arguments[2]), format: .fimi)
         let dispatchGroup = DispatchGroup()
         var factors1: [FormalConcept] = []
         var factors2: [FormalConcept] = []

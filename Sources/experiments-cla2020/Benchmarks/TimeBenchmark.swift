@@ -16,7 +16,7 @@ public class TimeBenchmark: Benchmark {
         
         for url in urls {
             if url.isFileURL {
-                let context = try! FormalContext(url: url)
+                let context = try! FormalContext(url: url, format: .fimi)
                 var times: [[Double]] = [[], [], []]
                 var algIndex = 0
                 let algs = [GreCon(), GreCon2(), GreConD()]
