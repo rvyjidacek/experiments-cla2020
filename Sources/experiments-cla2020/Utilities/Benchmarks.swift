@@ -52,12 +52,12 @@ public func compareGreConAndGreConDCoverage() throws {
 }
 
 public func timeBenchmark() throws {
-    let fileContent += "\\begin{tabular}{|l|c|c|c|}\n\\hline\n"
+    var fileContent = "\\begin{tabular}{|l|c|c|c|}\n\\hline\n"
     fileContent += "Dataset & GreCon & GreCon2 & GreConD \\\\ \n \\hline\n"
     
-    for url in urls {
+    for url in try FileManager.getUrls() {
         if url.isFileURL {
-            let context = try! FormalContext(url: url, format: .fimi)
+            let context = try FormalContext(url: url, format: .fimi)
             var times: [[Double]] = [[], [], []]
             var algIndex = 0
             let algs = [GreCon(), GreCon2(), GreConD()]
@@ -85,4 +85,24 @@ public func timeBenchmark() throws {
     
     fileContent += "\\end{tabular}\n"
     try FileManager.default.saveResult(folder: "Time", filename: "times.tex", content: fileContent)
+}
+
+public func computeAndStoreFactorisation() throws {
+    
+    for url in try FileManager.getUrls() {
+        let context = try FormalContext(url: url, format: .fimi)
+        let filename = url.lastPathComponent.replacingOccurrences(of: ".fimi", with: "")
+        
+        let greCon2Factors = GreCon2().countFactors(in: context)
+        
+        try FileManager.default.saveData(folder: "Factorisatio/GreCon",
+                                         filename: filename,
+                                         content: greCon2Factors.map { $0.export() }.joined(separator: "\n"))
+        
+        let greConDFactors = GreConD().countFactors(in: context)
+        
+        try FileManager.default.saveData(folder: "Factorisatio/GreConD",
+                                         filename: filename,
+                                         content: greConDFactors.map { $0.export() }.joined(separator: "\n"))
+    }
 }

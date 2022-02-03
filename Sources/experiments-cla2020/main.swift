@@ -58,7 +58,8 @@ import Foundation
 #endif
 
 do {
-    try timeBenchmark()
+    try computeAndStoreFactorisation()
+    //try timeBenchmark()
     //try compareGreConAndGreConDCoverage()
 } catch {
     fatalError(error.localizedDescription)

@@ -51,4 +51,11 @@ extension FileManager {
         try createFileIfNotExists(at:  folder + "/" + filename, content: content)
     }
     
+    public func saveData(folder: String, filename: String, content: String) throws {
+        let folder = currentDirectoryPath + "/data/" + folder
+        
+        try createDirectoryIfNotExists(at: folder)
+        try createFileIfNotExists(at:  folder + "/" + filename, content: content)
+    }
+    
 }
