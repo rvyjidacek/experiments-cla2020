@@ -18,23 +18,14 @@ public func compareGreConAndGreConDCoverage() throws {
         let alg1 = GreCon()
         let alg2 = GreConD()
         
-        dispatchGroup.enter()
-        Thread.init {
-            factors1 = alg1.countFactors(in: context)
-            dispatchGroup.leave()
-        }.start()
+        factors1 = alg1.countFactors(in: context)
+        dispatchGroup.leave()
         
-        dispatchGroup.enter()
-        Thread.init {
-            factors2 = alg2.countFactors(in: context)
-            dispatchGroup.leave()
-        }.start()
-
-        dispatchGroup.wait()
+        factors2 = alg2.countFactors(in: context)
+        dispatchGroup.leave()
         
         let iterationCount = min(factors1.count, factors2.count)
         let tuples: [(alg: BMFAlgorithm, factors: [FormalConcept])] = [(alg: alg1, factors: factors1), (alg: alg2, factors: factors2)]
-        
         
         var fileContent = ""
         
