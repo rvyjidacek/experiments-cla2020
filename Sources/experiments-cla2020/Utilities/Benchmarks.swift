@@ -50,3 +50,39 @@ public func compareGreConAndGreConDCoverage() throws {
                                            content: fileContent)
     }
 }
+
+public func timeBenchmark() throws {
+    let fileContent += "\\begin{tabular}{|l|c|c|c|}\n\\hline\n"
+    fileContent += "Dataset & GreCon & GreCon2 & GreConD \\\\ \n \\hline\n"
+    
+    for url in urls {
+        if url.isFileURL {
+            let context = try! FormalContext(url: url, format: .fimi)
+            var times: [[Double]] = [[], [], []]
+            var algIndex = 0
+            let algs = [GreCon(), GreCon2(), GreConD()]
+            
+            for algorithm in algs {
+                for _ in 0..<5 {
+                    let timer = Timer()
+                    let _ = algorithm.countFactors(in: context)
+                    let time = timer.stop()
+                    times[algIndex].append(time)
+                }
+                algIndex += 1
+            }
+            
+            
+            for col in 0..<times.count {
+                let average = times[col].reduce(0, +) / Double(times[col].count)
+                let deviation = times[col].map({ (average - $0).magnitude }).reduce(0, +) / Double(times[col].count)
+                fileContent += " & $\(String(format: "%.2f", average.rounded(toPlaces: 2))) \\pm \(String(format: "%.2f", deviation.rounded(toPlaces: 2)))$ "
+            }
+            fileContent += "\\\\ \\hline\n"
+            
+        }
+    }
+    
+    fileContent += "\\end{tabular}\n"
+    try FileManager.default.saveResult(folder: "Time", filename: "times.tex", content: fileContent)
+}
