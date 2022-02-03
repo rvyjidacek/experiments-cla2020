@@ -76,7 +76,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-t /Users/romanvyjidacek/phd/research/experiments-cla2020/datasets"
+            argument = "-c datasets/tic_tac_toe.csv "
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

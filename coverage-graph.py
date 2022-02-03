@@ -60,20 +60,20 @@ def generate_graph(x_padding, y_padding, step, markers, labels, input_file, outp
     plt.close()
 
 if sys.argv[1] == "GreCon":
+    generate_graph(2,1500,8,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2], 'firewall1-coverage.csv'), '{}{}'.format(sys.argv[3], 'firewall1.eps'))
     generate_graph(5,5000,10,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2],'mushrooms-coverage.csv'), '{}{}'.format(sys.argv[3], 'mushrooms.eps'))
     generate_graph(30,2000,35,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2],'advertisment-coverage.csv'), '{}{}'.format(sys.argv[3], 'advertisment.eps'))
     generate_graph(10,5000,10,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2],'americas_small-coverage.csv'), '{}{}'.format(sys.argv[3], 'americas_small.eps'))
     generate_graph(20,500,20,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2],'apj-coverage.csv'), '{}{}'.format(sys.argv[3], 'apj.eps'))
     generate_graph(20,2000,10,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2],'customer-coverage.csv'), '{}{}'.format(sys.argv[3], 'customer.eps'))
     generate_graph(20,1000,30,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2],'dna-coverage.csv'), '{}{}'.format(sys.argv[3], 'dna.eps'))
-    generate_graph(2,1500,8,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2], 'firewall1-coverage.csv'), '{}{}'.format(sys.argv[3], 'firewall1.eps'))
     generate_graph(1,800,3,['s', 'x'],("GreCon", "GreConD"),'{}{}'.format(sys.argv[2], 'tic_tac_toe-coverage.csv'), '{}{}'.format(sys.argv[3], 'tic_tac_toe.eps'))
 else:
+    generate_graph(2,1500,8,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2], 'firewall1-coverage.csv'), '{}{}'.format(sys.argv[3], 'firewall1.eps'))
     generate_graph(5,5000,10,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2],'mushrooms-coverage.csv'), '{}{}'.format(sys.argv[3], 'mushrooms.eps'))
     generate_graph(30,2000,35,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2],'advertisment-coverage.csv'), '{}{}'.format(sys.argv[3], 'advertisment.eps'))
     generate_graph(10,5000,10,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2],'americas_small-coverage.csv'), '{}{}'.format(sys.argv[3], 'americas_small.eps'))
     generate_graph(20,500,20,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2],'apj-coverage.csv'), '{}{}'.format(sys.argv[3], 'apj.eps'))
     generate_graph(20,2000,10,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2],'customer-coverage.csv'), '{}{}'.format(sys.argv[3], 'customer.eps'))
     generate_graph(20,1000,30,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2],'dna-coverage.csv'), '{}{}'.format(sys.argv[3], 'dna.eps'))
-    generate_graph(2,1500,8,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2], 'firewall1-coverage.csv'), '{}{}'.format(sys.argv[3], 'firewall1.eps'))
     generate_graph(1,800,3,['>', 'x'],("GreCon2", "GreConD"),'{}{}'.format(sys.argv[2], 'tic_tac_toe-coverage.csv'), '{}{}'.format(sys.argv[3], 'tic_tac_toe.eps'))
