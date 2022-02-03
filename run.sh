@@ -3,18 +3,18 @@
 mkdir -p results
 
 printf "%s\n" "Running time benchmark"
-swift run -c release experiments-cla2020 -t "$1"  > "results/time-results.tex"
 
+swift run -c release experiments-cla2020 -t "$1" > "results/time-results.tex"
 
 printf "%s\n" "Compare coverage of GreCon and GreConD"
 for file in $(ls $1)
 do
 
     filename="$file"
-    filename=$(echo $filename | sed 's/.csv//')
+    filename=$(echo $filename | sed 's/.fimi//')
     
     mkdir -p 'results/Grecon-vs-Grecond'
-    swift run -c release experiments-cla2020 -c "$1/${file}" > "results/Grecon-vs-Grecond/${filename}-coverage.csv"
+    swift run -c release experiments-cla2020 -m "$1/${file}" > "results/Grecon-vs-Grecond/${filename}-coverage.csv"
 done
 
 mkdir -p "results/graphs/grecon-vs-grecond"
@@ -31,7 +31,7 @@ for file in $(ls $1)
 do
 
     filename="$file"
-    filename=$(echo $filename | sed 's/.csv//')
+    filename=$(echo $filename | sed 's/.fimi//')
     
     mkdir -p 'results/Grecon-vs-Grecond-Coverage'
     swift run -c release experiments-cla2020 -g1 "$1/${file}" > "results/Grecon-vs-Grecond-Coverage/${filename}-coverage.csv"
@@ -49,7 +49,7 @@ for file in $(ls $1)
 do
 
     filename="$file"
-    filename=$(echo $filename | sed 's/.csv//')
+    filename=$(echo $filename | sed 's/.fimi//')
     
     mkdir -p 'results/Grecon2-vs-Grecond-Coverage'
     swift run -c release experiments-cla2020 -g1 "$1/${file}" > "results/Grecon2-vs-Grecond-Coverage/${filename}-coverage.csv"
@@ -68,7 +68,7 @@ for file in $(ls $1)
 do
 
     filename="$file"
-    filename=$(echo $filename | sed 's/.csv//')
+    filename=$(echo $filename | sed 's/.fimi//')
     
     mkdir -p 'results/restricted-grecon2-factorization'
     swift run -c release experiments-cla2020 -pg "$1/${file}" > "results/restricted-grecon2-factorization/${filename}-coverage.csv"

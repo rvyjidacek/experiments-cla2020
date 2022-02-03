@@ -40,6 +40,9 @@ def generate_graph(axis_min, axis_max, input_file, output_file):
     
 folder = sys.argv[1]
 
+# Firewall 1
+generate_graph(0.5, 90000, '{}firewall1-coverage.csv'.format(folder), 'results/graphs/grecon-vs-grecond/firewall1.eps')
+
 # Mushrooms
 generate_graph(1, 40000, "{}mushrooms-coverage.csv".format(folder), 'results/graphs/grecon-vs-grecond/mushrooms.eps')
 
@@ -57,9 +60,6 @@ generate_graph(0.5, 10000, '{}customer-coverage.csv'.format(folder), 'results/gr
 
 # DNA
 generate_graph(0.5, 10000, '{}dna-coverage.csv'.format(folder), 'results/graphs/grecon-vs-grecond/dna.eps')
-
-# Firewall 1
-generate_graph(0.5, 90000, '{}firewall1-coverage.csv'.format(folder), 'results/graphs/grecon-vs-grecond/firewall1.eps')
 
 # Tic tac toe
 generate_graph(100, 1000, '{}tic_tac_toe-coverage.csv'.format(folder), 'results/graphs/grecon-vs-grecond/tic_tac_toe.eps')
