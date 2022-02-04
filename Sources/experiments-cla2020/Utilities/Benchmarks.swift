@@ -95,14 +95,23 @@ public func computeAndStoreFactorisation() throws {
         
         let greCon2Factors = GreCon2().countFactors(in: context)
         
-        try FileManager.default.saveData(folder: "Factorisatio/GreCon",
+        try FileManager.default.saveData(folder: "Factorisation/GreCon",
                                          filename: filename,
                                          content: greCon2Factors.map { $0.export() }.joined(separator: "\n"))
         
         let greConDFactors = GreConD().countFactors(in: context)
         
-        try FileManager.default.saveData(folder: "Factorisatio/GreConD",
+        try FileManager.default.saveData(folder: "Factorisation/GreConD",
                                          filename: filename,
                                          content: greConDFactors.map { $0.export() }.joined(separator: "\n"))
     }
+}
+
+enum Algorithm {
+    case grecon
+    case grecond
+}
+
+public func loadFactorisation(algorithm: Algorithm, dataset: String) {
+    let path = 
 }
